@@ -1,0 +1,53 @@
+.authWrapper{
+  min-height: 100vh;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .formWrapper{
+    width: 500px;
+    max-width: 90%;
+    .logoAuth{
+      margin-bottom: 15px;
+      img{
+        width: 30%;
+        margin: 0 auto;
+        display: table;
+      }
+    }
+    .authInfo{
+      text-align: center;
+      h4{
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      p{
+        font-weight: 500;
+        font-size: 15px;
+        margin-top: 5px;
+      }
+    }
+    .topAuthInput{
+      padding: 0px 20px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .bottomAuthInput{
+      padding: 0px 20px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 20px;
+      h4{
+        text-align: center;
+        text-transform: uppercase;
+        color: $bodyColor;
+        font-size: 15px;
+      }
+      .btn{
+        margin-top: 15px;
+      }
+    }
+  }
+}

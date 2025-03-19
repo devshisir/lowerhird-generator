@@ -1,0 +1,144 @@
+.headerArea{
+  border-bottom: 1px solid #e7eaf3b3;
+  .headerLogo{
+    img{
+      height: 60px;
+    }
+  }
+  .middleHeader{
+    h4{
+      font-weight: 600;
+      font-size: 17px;
+    }
+  }
+  .userDropdown{
+    .dropdownButton{
+      border: none;
+      border-radius: 100px;
+      overflow: hidden;
+      outline: 2px solid transparent !important;
+      outline-offset: 2px;
+      transition: all 0.4s;
+      &:focus{
+        outline-color: rgba(55, 125, 255, 0.171) !important;
+        background-color: gold !important;
+      }
+      img{
+        height: 45px;
+      }
+    }
+    .dropdown-menu{
+      width: 256px;
+      .topUserDetails{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        border-bottom: 1px solid #e7eaf3b3;
+        padding: 5px 15px 10px 15px;
+        .userImage{
+          img{
+            height: 50px;
+            border-radius: 100px;
+          }
+        }
+        .userInfo{
+          h4{
+            font-weight: 700;
+            font-size: 15px;
+          }
+          p{
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+      }
+      .dropdownLink{
+        padding: 10px 10px 10px 10px;
+        ul{
+          li{
+            display: block;
+            a{
+              font-size: 14px;
+              display: block;
+              padding: 10px 15px;
+              font-weight: 500;
+              color: $dark-50;
+              border-radius: 10px;
+              &:hover{
+                background-color: $gray-100;
+                color: $dark-100;
+              }
+            }
+          }
+        }
+      }
+      .lastLinkDropdown{
+        padding: 10px 10px 5px 10px;
+        border-top: 1px solid #e7eaf3b3;
+        ul{
+          li{
+            display: block;
+            a{
+              font-size: 14px;
+              display: block;
+              padding: 10px 15px;
+              font-weight: 500;
+              color: $dark-50;
+              border-radius: 10px;
+              &:hover{
+                background-color: rgba(255, 0, 0, 0.068);
+                color: red;
+              }
+            }
+          }
+        }
+      }
+      ul{
+        li{
+          a{
+            i{
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// subHeader
+.subHeader{
+  padding: 20px 0px;
+  .backButton{
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    &:hover{
+      color: $brand;
+    }
+  }
+  .rightContent{
+    .btn{
+      margin-left: auto;
+    }
+  }
+}
+
+.backButton{
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  &:hover{
+    color: $brand;
+  }
+}

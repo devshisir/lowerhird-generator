@@ -1,0 +1,135 @@
+.form-control,.form-select{
+  background-color: #f9f9f9;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-weight: 600 !important;
+  font-size: 14px;
+  padding: 0px 20px !important;
+  transition: all 0.3s;
+  border-radius: 12px;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: #f1f1f2;
+  }
+}
+.colorControl{
+  border: 1px solid $brand;
+  height: 35px;
+  min-width: 60px;
+  cursor: pointer;
+  width: 100%;
+}
+.form-floating{
+  .form-control{
+    padding-top: 11px !important;
+  }
+  .form-select{
+    padding-top: 11px !important;
+  }
+  label{
+    font-weight: 600;
+    background-color: transparent !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    color: #4b5675;
+    &::after{
+      display: none;
+    }
+  }
+}
+
+.form-switch{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  .form-check-input{
+    height: 24px;
+    width: 45px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    &:checked{
+      background-color: $brand;
+      border: 1px solid $brand;
+      +label{
+        color: $dark-100;
+      }
+    }
+    &:focus{
+      border: 1px solid #e5e5e5;
+      
+    }
+  }
+  .form-check-label{
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: $dark-50;
+    position: relative;
+    top: 2px;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+                        /***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #F9F9F9;
+  height: 12px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #F9F9F9;
+  height: 12px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 30px;
+    background-color: $brand;
+    height: 20px;
+    width: 20px;
+}
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  border-radius: 30px;
+  background-color: $brand;
+  height: 20px;
+  width: 20px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid $brand;
+  outline: 2px solid $brand;
+  outline-offset: 0.125rem;
+  background-color: $brand;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid $brand;
+  outline: 2px solid $brand;
+  outline-offset: 0.125rem;   
+  background-color: $brand;  
+}

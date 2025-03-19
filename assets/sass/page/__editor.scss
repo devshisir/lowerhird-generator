@@ -1,0 +1,92 @@
+.mainEditorWrapper{
+  display: flex;
+  .left{
+    border-right: 1px solid #e7eaf3b3;
+    width: 450px;
+    padding: 20px 0px;
+    padding-right: 20px;
+    .fortextLine1,.fortextLine2,.fortextLine3{
+      border: 1px solid #e5e5e5;
+      padding-bottom: 20px;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    }
+    .topHeading{
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: $bodyColor;
+      margin-bottom: 10px;
+    }
+  }
+  .right{
+    padding-left: 20px;
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+  top: 0;
+  align-self: flex-start; /* Prevents vertical stretching */
+  height: fit-content; /* Ensures proper sticky behavior */
+
+
+    .userActionButton{
+      margin-top: 20px;
+      flex: 1;
+      width: 100%;
+      .topButtonRow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+        .resolutaionSelect{
+          min-width: 200px;
+        }
+      }
+      .bottomButton{
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+      }
+    }
+  }
+}
+
+.singleController{
+  margin-bottom: 10px;
+  &:last-child{
+    margin-bottom: 0px;
+  }
+  .topLabel{
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 3px;
+    color: $brand;
+  }
+}
+
+.rangeDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  .rightInfoValue{
+    min-width: 50px;
+    span{
+      text-align: right;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  
+}

@@ -1,0 +1,60 @@
+.modal-backdrop{
+  backdrop-filter: blur(3px) !important;
+  --bs-backdrop-opacity: 1 !important;
+  --bs-backdrop-bg: #164c7846 !important;
+}
+.modal{
+  .modal-dialog{
+    .modal-content{
+      border: none;
+      box-shadow: none;
+      border-radius: 15px;
+      .modal-header{
+        padding: 15px 20px 7px 20px;
+        border: none;
+        .modal-title{
+          font-weight: 600;
+          font-size: 17px;
+          color: $titleColor;
+        }
+        .btn-icon{
+          margin-left: auto;
+          height: 40px;
+          width: 40px;
+        }
+      }
+     .modal-body{
+      padding: 10px 20px;
+      border: none;
+     }
+     .modal-footer{
+      padding: 10px 20px;
+      border: none;
+     }
+    }
+  }
+}
+
+.deleteModal{
+  .modal-dialog{
+    .modal-content{
+     .modal-body{
+      text-align: center;
+      padding-top: 25px;
+        h5{
+          font-weight: 600;
+          font-size: 18px;
+        }
+        p{
+          font-weight: 500;
+          font-size: 14px;
+          margin-top: 4px;
+        }
+     }
+     .modal-footer{
+      padding-bottom: 20px;
+      justify-content: center;
+     }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawsome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Simple Thirds - Login</title>
+</head>
+
+<body>
+    <div class="authWrapper">
+        <div class="formWrapper">
+            <div class="logoAuth">
+                <a href="/">
+                    <img src="./assets/images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="authInfo">
+                <h4>Welcome to Simple Thirds</h4>
+                <p>Create and manage lower third graphics for your live streams and video production.</p>
+            </div>
+            <div class="topAuthInput">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="" autocomplete="false">
+                    <label for="email">Enter Your Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="" autocomplete="false">
+                    <label for="password">Enter Your Password</label>
+                </div>
+                <div id="errorMessage"></div>
+                <div class="mt-3 d-flex gap-2">
+                    <button id="loginButton" class="btn btn-primary w-full"
+                        onclick="emailLogin(document.getElementById('email').value, document.getElementById('password').value)">
+
+                        <i class="fa-solid fa-spinner-third fa-spin loader"></i>
+                        <span class="mainContent">Login</span>
+                        <span class="loaderContent">Loading...</span>
+                    </button>
+                    <button id="signUpButton" class="btn btn-primary w-full"
+                        onclick="emailSignUp(document.getElementById('email').value, document.getElementById('password').value)">
+
+                        <i class="fa-solid fa-spinner-third fa-spin loader"></i>
+                        <span class="mainContent">Sign Up</span>
+                        <span class="loaderContent">Loading...</span>
+                    </button>
+                </div>
+            </div>
+            <div class="bottomAuthInput">
+                <h4>Or</h4>
+                <button class="btn btn-secondary w-full" onclick="googleLogin()">
+                    <img src="./assets/images/google-icon.svg" alt="">
+                    Sign in with Google
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Logout Button -->
+    <button onclick="logout()">Logout</button>
+    <script type="module" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

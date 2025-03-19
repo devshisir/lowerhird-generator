@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import 'import/reset.scss';
+@import 'import/_color.scss';
+
+// all component load
+@import './component/_button';
+@import './component/_formElements';
+@import './component/_accordion';
+@import './component/_modal';
+@import './component/_toast';
+@import './component/_header';
+@import './component/_dropdown';
+
+// all page include
+@import './page/_auth';
+@import './page/_dashboard';
+@import './page/_project';
+@import './page/_editor';

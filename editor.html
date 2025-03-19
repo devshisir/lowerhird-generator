@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawsome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Lower Third Editor</title>
+</head>
+
+<body>
+    <main class="mainArea">
+        <div class="headerArea">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3">
+                        <div class="headerLogo">
+                            <a href="/dashboard.html">
+                                <img src="./assets/images/logo.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="middleHeader text-center">
+                            <h4 id="project-name">Editor</h4>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="text-end userDropdown">
+                            <div class="btn-group">
+                                <button type="button" class="dropdownButton" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="https://htmlstream.com/preview/front-dashboard-v2.1.1/assets/img/160x160/img6.jpg"
+                                        alt="">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <div class="topUserDetails">
+                                        <div class="userImage">
+                                            <img src="https://htmlstream.com/preview/front-dashboard-v2.1.1/assets/img/160x160/img6.jpg"
+                                                alt="">
+                                        </div>
+                                        <div class="userInfo">
+                                            <h4>Jhone Doe</h4>
+                                            <p>jhondoe@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdownLink">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-light fa-user"></i>
+                                                    Profile & account
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-light fa-gear"></i>
+                                                    Settings
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-light fa-folders"></i>
+                                                    My project
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="lastLinkDropdown">
+                                        <ul>
+                                            <li>
+                                                <a href="#" onclick="logout()">
+                                                    <i class="fa-regular fa-arrow-right-from-bracket"></i>
+                                                    Sign out
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mainEditorWrapper">
+                        <div class="left">
+                            <a href="/dashboard.html" class="backButton">
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                                Back To Dashboard
+                            </a>
+                            <div class="accordion mt-3" id="controllAcordion">
+                                <!-- text control item -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <div class="acordionIcon"><i class="fa-solid fa-text-size"></i></div>
+                                            <span>Text</span>
+                                            <div class="toggleButton">
+                                                <i class="fa-sharp fa-solid fa-sort-down"></i>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        data-bs-parent="#controllAcordion">
+                                        <div class="accordion-body">
+                                            <div class="fortextLine1">
+                                                <h4 class="topHeading">For text line 1</h4>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="enableLine1" checked onchange="toggleLine(1)">
+                                                        <label class="form-check-label" for="enableLine1">Enable</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="text1"
+                                                            oninput="updateText(1)" placeholder="">
+                                                        <label for="text1">Enter text line</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <select class="form-select font-selector" id="fontFamily1"
+                                                            onchange="updateFontFamily(1)" id="floatingSelect"
+                                                            aria-label="Floating label select example">
+                                                            <option selected>Choose fonts from list</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                        <label for="fontFamily1">Select font</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Size</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="fontSize1" min="10"
+                                                            max="100" value="50" oninput="updateFontSize(1)">
+                                                        <div class="rightInfoValue"><span id="fontSizeValue1">50</span>
+                                                            px
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Position</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="positionY1" min="700"
+                                                            max="1000" value="750" oninput="updateTextPosition(1)">
+                                                        <!-- <div class="rightInfoValue"><span id="positionValue1">750</span> px
+                                                    </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fortextLine2">
+                                                <h4 class="topHeading">For text line 2</h4>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="enableLine2" checked onchange="toggleLine(2)">
+                                                        <label class="form-check-label" for="enableLine2">Enable</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="text2"
+                                                            oninput="updateText(2)" placeholder="">
+                                                        <label for="text2">Enter text line</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <select class="form-select font-selector" id="fontFamily2"
+                                                            onchange="updateFontFamily(2)"
+                                                            aria-label="Floating label select example">
+                                                            <option selected>Choose fonts from list</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                        <label for="fontFamily2">Select font</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Size</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="fontSize2" min="10"
+                                                            max="100" value="35" oninput="updateFontSize(2)">
+                                                        <div class="rightInfoValue"><span id="fontSizeValue2">35</span>
+                                                            px
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Position</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="positionY2" min="750"
+                                                            max="1050" value="1000" oninput="updateTextPosition(2)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fortextLine3">
+                                                <h4 class="topHeading">For text line 3</h4>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="enableLine3" checked onchange="toggleLine(3)">
+                                                        <label class="form-check-label" for="enableLine3">Enable</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="text3"
+                                                            oninput="updateText(3)" placeholder="">
+                                                        <label for="text3">Enter text line</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <div class="form-floating">
+                                                        <select class="form-select font-selector" id="fontFamily3"
+                                                            onchange="updateFontFamily(3)"
+                                                            aria-label="Floating label select example">
+                                                            <option selected>Choose fonts from list</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                        <label for="fontFamily3">Select font</label>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Size</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="fontSize3" min="10"
+                                                            max="100" value="31" oninput="updateFontSize(3)">
+                                                        <div class="rightInfoValue"><span id="fontSizeValue2">31</span>
+                                                            px
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- single item -->
+                                                <div class="singleController">
+                                                    <label class="topLabel">Position</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="positionY3" min="800"
+                                                            max="1100" value="850" oninput="updateTextPosition(3)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- design control item -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            <div class="acordionIcon">
+                                                <i class="fa-light fa-object-group"></i>
+                                            </div>
+                                            <span>Design</span>
+                                            <div class="toggleButton">
+                                                <i class="fa-sharp fa-solid fa-sort-down"></i>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        data-bs-parent="#controllAcordion">
+                                        <div class="accordion-body">
+                                            <div class="fortextLine1">
+                                                <div class="singleController">
+                                                    <label class="topLabel">Font Color</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="color" id="fontColor" class="colorControl"
+                                                            value="#ffffff" oninput="updateFontColor()">
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Color Fill</label>
+                                                    <div class="form-floating">
+                                                        <select class="form-select" id="rectType"
+                                                            onchange="toggleRectangleSettings()">
+                                                            <option value="solid">Solid Color</option>
+                                                            <option value="gradient">Gradient</option>
+                                                        </select>
+                                                        <label for="rectType">Select Fill Style</label>
+                                                    </div>
+                                                </div>
+                                                <div id="solidColorSettings" class="singleController">
+                                                    <label class="topLabel">Background Color</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="color" id="bgColor" class="colorControl"
+                                                            value="#154c79" oninput="updateBgColor()">
+                                                    </div>
+                                                </div>
+                                                <div id="gradientSettings" style="display: none;">
+                                                    <div class="singleController">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <label class="topLabel">Gradient Color 1</label>
+                                                                <input type="color" id="gradientColor1"
+                                                                    class="colorControl" value="#154c79"
+                                                                    oninput="updateGradient()">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="topLabel">Gradient Color 2</label>
+                                                                <input type="color" id="gradientColor2"
+                                                                    class="colorControl" value="#00aaff"
+                                                                    oninput="updateGradient()">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="singleController">
+                                                        <label class="topLabel">Gradient Direction</label>
+                                                        <div class="form-floating">
+                                                            <select class="form-select" id="gradientDirection"
+                                                                onchange="updateGradient()">
+                                                                <option value="top-bottom">Top to Bottom</option>
+                                                                <option value="left-right">Left to Right</option>
+                                                                <option value="diagonal">Diagonal</option>
+                                                            </select>
+                                                            <label for="rectType">Select Direction</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Opacity</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="bgOpacity" min="0"
+                                                            max="100" value="100" oninput="updateBgOpacity()">
+                                                        <div class="rightInfoValue"><span
+                                                                id="bgOpacityValue">100%</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fortextLine1">
+                                                <div class="singleController">
+                                                    <label class="topLabel">Left Crop</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="leftCrop" min="0"
+                                                            max="100" value="0" oninput="updateBoxCrop()">
+                                                        <div class="rightInfoValue"><span id="leftCropValue">0%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Right Crop</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="rightCrop" min="0"
+                                                            max="100" value="0" oninput="updateBoxCrop()">
+                                                        <div class="rightInfoValue"><span id="rightCropValue">0%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Rounded Edges</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="roundedEdges" min="0"
+                                                            max="100" value="0" oninput="updateRoundedEdges()">
+                                                        <div class="rightInfoValue"><span
+                                                                id="roundedEdgesValue">0%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fortextLine1">
+                                                <div class="singleController">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="strokeEnabled" onchange="toggleStroke()">
+                                                        <label class="form-check-label" for="strokeEnabled">Enable
+                                                            Stroke</label>
+                                                    </div>
+                                                </div>
+                                                <div id="strokeSettings">
+                                                    <div class="singleController">
+                                                        <label class="topLabel">Stroke Thickness</label>
+                                                        <div class="rangeDiv">
+                                                            <input type="range" class="form-range" id="strokeWidth"
+                                                                min="1" max="20" value="2" oninput="updateStroke()">
+                                                            <div class="rightInfoValue"><span
+                                                                    id="strokeWidthValue">2px</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="singleController">
+                                                        <label class="topLabel">Stroke Color</label>
+                                                        <div class="rangeDiv">
+                                                            <input type="color" id="strokeColor" class="colorControl"
+                                                                value="#ffffff" oninput="updateStroke()">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- align control -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#alignToggle"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            <div class="acordionIcon">
+                                                <i class="fa-regular fa-square-sliders-vertical"></i>
+                                            </div>
+                                            <span>Align</span>
+                                            <div class="toggleButton">
+                                                <i class="fa-sharp fa-solid fa-sort-down"></i>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="alignToggle" class="accordion-collapse collapse"
+                                        data-bs-parent="#controllAcordion">
+                                        <div class="accordion-body">
+                                            <div class="fortextLine1">
+                                                <div class="singleController">
+                                                    <label class="topLabel">Text Alignment</label>
+                                                    <div class="form-floating">
+                                                        <select class="form-select" id="textAlignment"
+                                                            onchange="updateTextAlignment()"
+                                                            aria-label="Floating label select example">
+                                                            <option value="left">Left</option>
+                                                            <option value="center">Center</option>
+                                                            <option value="right">Right</option>
+                                                        </select>
+                                                        <label for="fontFamily1">Select align </label>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Text Margin</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="textMargin"
+                                                            min="-100" max="100" value="0">
+                                                        <div class="rightInfoValue"><span id="textMarginValue">40</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Rectangle Height</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="rectHeight" min="50"
+                                                            max="200" value="100" oninput="updateRectangleHeight()">
+                                                        <div class="rightInfoValue"><span
+                                                                id="rectHeightValue">100%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleController">
+                                                    <label class="topLabel">Vertical Position</label>
+                                                    <div class="rangeDiv">
+                                                        <input type="range" class="form-range" id="verticalPosition"
+                                                            min="-100" max="100" value="0">
+                                                        <div class="rightInfoValue"><span
+                                                                id="verticalPositionValue">0%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- canvas preview -->
+                        <div class="right text-center sticky-top">
+                            <canvas id="lowerThirdCanvas" width="768" height="432"></canvas>
+                            <div class="userActionButton">
+                                <div class="topButtonRow">
+                                    <div class="form-floating resolutaionSelect">
+                                        <select class="form-select" id="resolutionToggle"
+                                            aria-label="Floating label select example">
+                                            <option value="hd" selected>HD (1920x1080)</option>
+                                            <option value="4k">4K (3840x2160)</option>
+                                        </select>
+                                        <label for="resolutionToggle">Select Resolution</label>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="resetLowerThird()">
+                                        <i class="fa-regular fa-eraser"></i>
+                                        Reset
+                                    </button>
+                                    <button class="btn btn-primary" onclick="resetLowerThird()">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                        Save Project
+                                    </button>
+                                </div>
+                                <div class="bottomButton">
+                                    <button class="btn btn-primary" onclick="exportAsPNG()">
+                                        <i class="fa-regular fa-folder-arrow-down"></i>
+                                        Download PNG
+                                    </button>
+                                    <button class="btn btn-primary" onclick="returnToDashboard()">
+                                        <i class="fa-solid fa-arrow-left-long"></i>
+                                        Return to Dashboard
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/canvas.js"></script>
+    <script type="module" src="./assets/js/editor.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
