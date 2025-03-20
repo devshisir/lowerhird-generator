@@ -18,19 +18,19 @@
         <div class="headerArea">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-6">
                         <div class="headerLogo">
                             <a href="/dashboard.html">
                                 <img src="./assets/images/logo.svg" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-6">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 mobile-order-3">
                         <div class="middleHeader text-center">
-                            <h4 id="project-name">Editor</h4>
+                            <h4>Editor</h4>
                         </div>
                     </div>
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-6">
                         <div class="text-end userDropdown">
                             <div class="btn-group">
                                 <button type="button" class="dropdownButton" data-bs-toggle="dropdown"
@@ -259,7 +259,7 @@
                                                     <div class="rangeDiv">
                                                         <input type="range" class="form-range" id="fontSize3" min="10"
                                                             max="100" value="31" oninput="updateFontSize(3)">
-                                                        <div class="rightInfoValue"><span id="fontSizeValue2">31</span>
+                                                        <div class="rightInfoValue"><span id="fontSizeValue3">31</span>
                                                             px
                                                         </div>
                                                     </div>
@@ -506,7 +506,7 @@
                                         <i class="fa-regular fa-eraser"></i>
                                         Reset
                                     </button>
-                                    <button class="btn btn-primary" onclick="resetLowerThird()">
+                                    <button class="btn btn-primary">
                                         <i class="fa-regular fa-floppy-disk"></i>
                                         Save Project
                                     </button>
@@ -527,12 +527,374 @@
                 </div>
             </div>
         </div>
+        <div class="mobileMenu">
+            <div class="mobileMenuInner">
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#textOffcanvas">
+                    <div class="icon">
+                        <i class="fa-solid fa-text-size"></i>
+                    </div>
+                    <h5>Text</h5>
+                </button>
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#designOffcanvas">
+                    <div class="icon">
+                        <i class="fa-light fa-object-group"></i>
+                    </div>
+                    <h5>Design</h5>
+                </button>
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#alignmentOffcanvas">
+                    <div class="icon">
+                        <i class="fa-regular fa-square-sliders-vertical"></i>
+                    </div>
+                    <h5>Alignments</h5>
+                </button>
+            </div>
+        </div>
     </main>
+    <!-- text option off canvas -->
+    <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="textOffcanvas" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="fortextLine1">
+                <h4 class="topHeading">For text line 1</h4>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="enableLine1" checked
+                            onchange="toggleLine(1)">
+                        <label class="form-check-label" for="enableLine1">Enable</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="text1" oninput="updateText(1)" placeholder="">
+                        <label for="text1">Enter text line</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <select class="form-select font-selector" id="fontFamily1" onchange="updateFontFamily(1)"
+                            id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Choose fonts from list</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label for="fontFamily1">Select font</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Size</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="fontSize1" min="10" max="100" value="50"
+                            oninput="updateFontSize(1)">
+                        <div class="rightInfoValue"><span id="fontSizeValue1">50</span>
+                            px
+                        </div>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Position</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="positionY1" min="700" max="1000" value="750"
+                            oninput="updateTextPosition(1)">
+                        <!-- <div class="rightInfoValue"><span id="positionValue1">750</span> px
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="fortextLine2">
+                <h4 class="topHeading">For text line 2</h4>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="enableLine2" checked
+                            onchange="toggleLine(2)">
+                        <label class="form-check-label" for="enableLine2">Enable</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="text2" oninput="updateText(2)" placeholder="">
+                        <label for="text2">Enter text line</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <select class="form-select font-selector" id="fontFamily2" onchange="updateFontFamily(2)"
+                            aria-label="Floating label select example">
+                            <option selected>Choose fonts from list</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label for="fontFamily2">Select font</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Size</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="fontSize2" min="10" max="100" value="35"
+                            oninput="updateFontSize(2)">
+                        <div class="rightInfoValue"><span id="fontSizeValue2">35</span>
+                            px
+                        </div>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Position</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="positionY2" min="750" max="1050" value="1000"
+                            oninput="updateTextPosition(2)">
+                    </div>
+                </div>
+            </div>
+            <div class="fortextLine3">
+                <h4 class="topHeading">For text line 3</h4>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="enableLine3" checked
+                            onchange="toggleLine(3)">
+                        <label class="form-check-label" for="enableLine3">Enable</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="text3" oninput="updateText(3)" placeholder="">
+                        <label for="text3">Enter text line</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <div class="form-floating">
+                        <select class="form-select font-selector" id="fontFamily3" onchange="updateFontFamily(3)"
+                            aria-label="Floating label select example">
+                            <option selected>Choose fonts from list</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label for="fontFamily3">Select font</label>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Size</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="fontSize3" min="10" max="100" value="31"
+                            oninput="updateFontSize(3)">
+                        <div class="rightInfoValue"><span id="fontSizeValue3">31</span>
+                            px
+                        </div>
+                    </div>
+                </div>
+                <!-- single item -->
+                <div class="singleController">
+                    <label class="topLabel">Position</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="positionY3" min="800" max="1100" value="850"
+                            oninput="updateTextPosition(3)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- text option off canvas -->
+    <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="designOffcanvas" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="fortextLine1">
+                <div class="singleController">
+                    <label class="topLabel">Font Color</label>
+                    <div class="rangeDiv">
+                        <input type="color" id="fontColor" class="colorControl" value="#ffffff"
+                            oninput="updateFontColor()">
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Color Fill</label>
+                    <div class="form-floating">
+                        <select class="form-select" id="rectType" onchange="toggleRectangleSettings()">
+                            <option value="solid">Solid Color</option>
+                            <option value="gradient">Gradient</option>
+                        </select>
+                        <label for="rectType">Select Fill Style</label>
+                    </div>
+                </div>
+                <div id="solidColorSettings" class="singleController">
+                    <label class="topLabel">Background Color</label>
+                    <div class="rangeDiv">
+                        <input type="color" id="bgColor" class="colorControl" value="#154c79" oninput="updateBgColor()">
+                    </div>
+                </div>
+                <div id="gradientSettings" style="display: none;">
+                    <div class="singleController">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="topLabel">Gradient Color 1</label>
+                                <input type="color" id="gradientColor1" class="colorControl" value="#154c79"
+                                    oninput="updateGradient()">
+                            </div>
+                            <div class="col-6">
+                                <label class="topLabel">Gradient Color 2</label>
+                                <input type="color" id="gradientColor2" class="colorControl" value="#00aaff"
+                                    oninput="updateGradient()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleController">
+                        <label class="topLabel">Gradient Direction</label>
+                        <div class="form-floating">
+                            <select class="form-select" id="gradientDirection" onchange="updateGradient()">
+                                <option value="top-bottom">Top to Bottom</option>
+                                <option value="left-right">Left to Right</option>
+                                <option value="diagonal">Diagonal</option>
+                            </select>
+                            <label for="rectType">Select Direction</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Opacity</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="bgOpacity" min="0" max="100" value="100"
+                            oninput="updateBgOpacity()">
+                        <div class="rightInfoValue"><span id="bgOpacityValue">100%</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fortextLine1">
+                <div class="singleController">
+                    <label class="topLabel">Left Crop</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="leftCrop" min="0" max="100" value="0"
+                            oninput="updateBoxCrop()">
+                        <div class="rightInfoValue"><span id="leftCropValue">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Right Crop</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="rightCrop" min="0" max="100" value="0"
+                            oninput="updateBoxCrop()">
+                        <div class="rightInfoValue"><span id="rightCropValue">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Rounded Edges</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="roundedEdges" min="0" max="100" value="0"
+                            oninput="updateRoundedEdges()">
+                        <div class="rightInfoValue"><span id="roundedEdgesValue">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fortextLine1">
+                <div class="singleController">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="strokeEnabled"
+                            onchange="toggleStroke()">
+                        <label class="form-check-label" for="strokeEnabled">Enable
+                            Stroke</label>
+                    </div>
+                </div>
+                <div id="strokeSettings">
+                    <div class="singleController">
+                        <label class="topLabel">Stroke Thickness</label>
+                        <div class="rangeDiv">
+                            <input type="range" class="form-range" id="strokeWidth" min="1" max="20" value="2"
+                                oninput="updateStroke()">
+                            <div class="rightInfoValue"><span id="strokeWidthValue">2px</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleController">
+                        <label class="topLabel">Stroke Color</label>
+                        <div class="rangeDiv">
+                            <input type="color" id="strokeColor" class="colorControl" value="#ffffff"
+                                oninput="updateStroke()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- text option off canvas -->
+    <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="alignmentOffcanvas" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="fortextLine1">
+                <div class="singleController">
+                    <label class="topLabel">Text Alignment</label>
+                    <div class="form-floating">
+                        <select class="form-select" id="textAlignment" onchange="updateTextAlignment()"
+                            aria-label="Floating label select example">
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
+                            <option value="right">Right</option>
+                        </select>
+                        <label for="fontFamily1">Select align </label>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Text Margin</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="textMargin" min="-100" max="100" value="0">
+                        <div class="rightInfoValue"><span id="textMarginValue">40</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Rectangle Height</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="rectHeight" min="50" max="200" value="100"
+                            oninput="updateRectangleHeight()">
+                        <div class="rightInfoValue"><span id="rectHeightValue">100%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="singleController">
+                    <label class="topLabel">Vertical Position</label>
+                    <div class="rangeDiv">
+                        <input type="range" class="form-range" id="verticalPosition" min="-100" max="100" value="0">
+                        <div class="rightInfoValue"><span id="verticalPositionValue">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script src="./assets/js/jquery-3.3.1.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./assets/js/editor.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         let canvas = new fabric.Canvas('lowerThirdCanvas');
@@ -674,7 +1036,6 @@
             });
             text.baseTop = topPos; // Set baseTop here
             return text;
-
         }
 
         function calculateYPosition() {
@@ -689,6 +1050,9 @@
 
         // Reset Function
         function resetLowerThird() {
+            console.log('hello world')
+
+
             // Reset UI Controls
             Object.keys(INITIAL_VALUES).forEach(key => {
                 const el = document.getElementById(key);
@@ -927,7 +1291,7 @@
         function loadSampleBackground() {
             if (bgImage) canvas.remove(bgImage);
 
-            fabric.Image.fromURL("../../assets/images/sample-bg.jpg", img => {
+            fabric.Image.fromURL("./assets/images/sample-bg.jpg", img => {
                 img.set({
                     scaleX: PREVIEW_WIDTH / img.width,
                     scaleY: PREVIEW_HEIGHT / img.height,
@@ -948,14 +1312,14 @@
 
             switch (type) {
                 case 'solid':
-                    solidSettings.style.display = 'block';
+                    solidSettings.style.display = 'flex';
                     gradientSettings.style.display = 'none';
                     updateBgColor(); // Update with solid color
                     break;
 
                 case 'gradient':
                     solidSettings.style.display = 'none';
-                    gradientSettings.style.display = 'block';
+                    gradientSettings.style.display = 'flex';
                     updateGradient(); // Update with gradient
                     break;
 
@@ -1087,7 +1451,7 @@
         }
 
         function toggleStrokeSettings(show) {
-            document.getElementById('strokeSettings').style.display = show ? 'block' : 'none';
+            document.getElementById('strokeSettings').style.display = show ? 'flex' : 'none';
         }
 
         // Update stroke properties
@@ -1461,6 +1825,67 @@
         canvas.setDimensions({ width: PREVIEW_WIDTH, height: PREVIEW_HEIGHT });
         document.addEventListener('DOMContentLoaded', initializeFonts);
         initializeCanvas();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Target all offcanvas elements
+            document.querySelectorAll('.offcanvas').forEach((offcanvas) => {
+                // When offcanvas opens
+                offcanvas.addEventListener('show.bs.offcanvas', (event) => {
+                    document.body.classList.add('body-offcanvas-active');
+                    const offcanvasId = event.target.id; // Get the offcanvas ID
+                    // Find the button(s) that triggered this offcanvas
+                    const buttons = document.querySelectorAll(
+                        `[data-bs-toggle="offcanvas"][data-bs-target="#${CSS.escape(offcanvasId)}"]`
+                    );
+                    // Add 'active' class to all relevant buttons
+                    buttons.forEach(btn => btn.classList.add('active'));
+                });
+
+                // When offcanvas closes
+                offcanvas.addEventListener('hide.bs.offcanvas', (event) => {
+                    document.body.classList.remove('body-offcanvas-active');
+                    const offcanvasId = event.target.id;
+                    const buttons = document.querySelectorAll(
+                        `[data-bs-toggle="offcanvas"][data-bs-target="#${CSS.escape(offcanvasId)}"]`
+                    );
+                    // Remove 'active' class from all relevant buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                });
+            });
+        });
+    </script>
+    <script>
+        // Store the original content of the div
+        let originalRightDivContent = '';
+
+        // Function to clear or restore content based on screen width
+        const handleMobileView = () => {
+            const rightDiv = document.querySelector('.mainEditorWrapper .left');
+            if (!rightDiv) return;
+
+            // Initialize original content if empty
+            if (!originalRightDivContent) {
+                originalRightDivContent = rightDiv.innerHTML;
+            }
+
+            // Check screen width
+            if (window.innerWidth <= 767) {
+                rightDiv.innerHTML = ''; // Clear content on mobile
+            } else {
+                rightDiv.innerHTML = originalRightDivContent; // Restore content on desktop
+            }
+        };
+
+        // Run on page load
+        handleMobileView();
+
+        // Update on window resize (with debounce for performance)
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(handleMobileView, 100);
+        });
     </script>
 </body>
 

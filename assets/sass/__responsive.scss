@@ -1,0 +1,139 @@
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .mainEditorWrapper{
+    overflow-x: hidden !important;
+  }
+  .mainEditorWrapper .left {
+    min-width: 380px;
+    width: 380px;
+    max-height: calc(100vh - 91px);
+    overflow-y: scroll;
+}
+.canvas-container{
+  width: 100% !important;
+}
+#lowerThirdCanvas{
+  width: 100% !important;
+}
+#upper-canvas {
+  width: 100% !important;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mainEditorWrapper{
+    overflow-x: hidden !important;
+  }
+  .mainEditorWrapper .left {
+    min-width: 340px;
+    width: 340px;
+    max-height: calc(100vh - 91px);
+    overflow-y: scroll;
+}
+.canvas-container{
+  width: 100% !important;
+}
+#lowerThirdCanvas{
+  width: 100% !important;
+}
+#upper-canvas {
+  width: 100% !important;
+}
+}
+
+
+@media (max-width: 991px) {
+  .mainEditorWrapper{
+    overflow-x: hidden !important;
+  }
+  .mainEditorWrapper .left {
+    min-width: 300px;
+    width: 300px;
+    max-height: calc(100vh - 91px);
+    overflow-y: scroll;
+}
+.canvas-container{
+  width: 100% !important;
+}
+#lowerThirdCanvas{
+  width: 100% !important;
+}
+#upper-canvas {
+  width: 100% !important;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media (max-width: 767px) {
+  .mobile-order-1{
+    order: 1;
+  }
+  .mobile-order-2{
+    order: 2;
+  }
+  .mobile-order-3{
+    order: 3;
+  }
+  .headerArea .middleHeader {
+    padding-bottom: 15px;
+    text-align: center !important;
+}
+.subHeader .rightContent .btn {
+  width: 100%;
+  margin-top: 15px;
+}
+.project-list .project-item {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 10px;
+  .actionButtons{
+    flex: 1;
+    justify-content: end;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+.lower-thirds-list{
+  .lower-third-item{
+    flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 10px;
+  .actionButtons{
+    flex: 1;
+    justify-content: end;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  }
+}
+
+.mainEditorWrapper .left {
+  display: none;
+}
+.mainEditorWrapper .right {
+  padding-left: 0px !important;
+  padding-bottom: 100px;
+}
+
+.mobileMenu{
+  display: block;
+}
+
+
+}
+
+@media (max-width: 575px) {
+.authWrapper .formWrapper .topAuthInput {
+  padding: 0px;
+  width: 100%;
+}
+.authWrapper .formWrapper .bottomAuthInput {
+  padding: 0px;
+  width: 100%;
+}
+
+}

@@ -242,6 +242,7 @@ async function displayLowerThirds(userId, projectId) {
             // Create button container
             const buttonContainer = document.createElement("div");
             buttonContainer.style.display = "flex";
+            buttonContainer.classList.add('actionButtons');
             buttonContainer.style.gap = "10px";
     
             // Create Rename Button

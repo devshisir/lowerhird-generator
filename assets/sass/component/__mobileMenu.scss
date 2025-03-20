@@ -1,0 +1,83 @@
+.mobileMenu{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  z-index: 99999999999999;
+  .mobileMenuInner{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    button{
+      border: none;
+      background-color: transparent;
+      flex: 1;
+      padding: 10px 0px;
+      .icon{
+        i{
+          color: $dark-50;
+          font-size: 19px;
+        }
+      }
+      h5{
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: $dark-50;
+      }
+      &.active{
+        background-color: $brand;
+        i{
+          color: #fff;
+        }
+        h5{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// offcanvas
+.offcanvas{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  height: 400px !important;
+  border: none !important;
+  border-radius: 15px 15px 0px 0px !important;
+  .fortextLine1,.fortextLine2,.fortextLine3{
+    border: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    &:last-child{
+      margin-bottom: 0px;
+    }
+  }
+  .topHeading{
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $bodyColor;
+    margin-bottom: 10px;
+  }
+  .offcanvas-body{
+    padding-bottom: 100px;
+  }
+}
+.offcanvas-header{
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.body-offcanvas-active{
+  .mainEditorWrapper .right{
+    padding-bottom: 450px;
+  }
+  .btn-close{
+    outline: none;
+    box-shadow: none;
+  }
+}

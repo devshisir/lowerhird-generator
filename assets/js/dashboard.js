@@ -185,6 +185,7 @@ console.log(querySnapshot)
             // Create a container for buttons
             const buttonContainer = document.createElement("div");
             buttonContainer.style.display = "flex";
+            buttonContainer.classList.add('actionButtons');
             buttonContainer.style.gap = "10px"; // Space between buttons
     
             // Create Rename button

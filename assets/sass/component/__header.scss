@@ -1,5 +1,6 @@
 .headerArea{
   border-bottom: 1px solid #e7eaf3b3;
+  padding: 15px 0px;
   .headerLogo{
     img{
       height: 60px;
@@ -29,6 +30,7 @@
     }
     .dropdown-menu{
       width: 256px;
+      z-index: 99999999999 !important;
       .topUserDetails{
         display: flex;
         align-items: center;
@@ -120,6 +122,12 @@
     background-color: transparent;
     &:hover{
       color: $brand;
+    }
+  }
+  .leftContent{
+    h5{
+      font-weight: 600;
+      font-size: 18px;
     }
   }
   .rightContent{
